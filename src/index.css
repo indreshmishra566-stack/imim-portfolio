@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #080C10;
+    --bg2: #0E1318;
+    --bg3: #141A20;
+    --border: rgba(255, 255, 255, 0.08);
+    --border2: rgba(255, 255, 255, 0.14);
+    --text: #E8EDF2;
+    --muted: #6B7A8A;
+    --accent: #3B82F6;
+    --accent-cyan: #06B6D4;
+    --green: #10B981;
+    --amber: #F59E0B;
+    --red: #EF4444;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--bg3);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .section-wrapper {
+    @apply max-w-4xl mx-auto px-6 py-24;
+  }
+
+  .section-label {
+    @apply flex items-center gap-3 font-mono text-xs tracking-widest uppercase mb-4;
+    color: var(--accent);
+  }
+
+  .section-label::after {
+    content: '';
+    @apply block h-px w-10 opacity-40;
+    background: var(--accent);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight mb-6;
+    letter-spacing: -0.03em;
+  }
+
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    @apply rounded-xl;
+  }
+
+  .card-hover {
+    @apply transition-colors duration-200 cursor-pointer;
+  }
+
+  .card-hover:hover {
+    background: var(--bg3);
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-mono text-sm transition-all duration-200 cursor-pointer no-underline;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    @apply text-white;
+  }
+
+  .btn-primary:hover {
+    background: #2563EB;
+    @apply -translate-y-px;
+  }
+
+  .btn-secondary {
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    color: var(--text);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .btn-ghost:hover {
+    color: var(--text);
+    border-color: var(--border2);
+  }
+
+  .tag {
+    @apply font-mono text-xs px-2.5 py-1 rounded;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .status-live {
+    @apply font-mono text-xs px-2 py-0.5 rounded;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .status-wip {
+    @apply font-mono text-xs px-2 py-0.5 rounded;
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  .input-field {
+    @apply w-full rounded-lg px-3.5 py-2.5 font-mono text-sm outline-none transition-colors duration-200;
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    color: var(--text);
+  }
+
+  .input-field:focus {
+    border-color: var(--accent);
+  }
+
+  .input-field::placeholder {
+    color: var(--muted);
+  }
+}
