@@ -161,13 +161,14 @@ export default function Hero() {
             Contact Me
           </button>
           <a
-            className="btn btn-ghost"
-            href="/resume.pdf"
-            download
-            style={{ textDecoration: 'none' }}
-          >
-            ↓ Resume
-          </a>
+  className="btn btn-ghost"
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: 'none' }}
+>
+  📄 View Resume
+</a>
         </motion.div>
 
         {/* Stats grid */}
